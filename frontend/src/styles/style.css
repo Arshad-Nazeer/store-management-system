@@ -1,4 +1,4 @@
-body{
+/* body{
 font-family: Arial, Helvetica, sans-serif;
 background:#f5f6fa;
 margin:0;
@@ -77,4 +77,190 @@ background:#fff;
 border-radius:10px;
 padding:15px;
 box-shadow:0 2px 8px rgba(0,0,0,0.1);
+} */
+ body{
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg,#eef2f7,#dfe9f3);
+margin:0;
+padding:0;
+animation: fadeIn 1s ease;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+animation: slideUp 0.8s ease;
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+margin-bottom:30px;
+letter-spacing:1px;
+animation: fadeInDown 1s ease;
+}
+
+h2{
+color:#34495e;
+}
+
+/* Glassmorphism Card */
+.card{
+background:rgba(255,255,255,0.85);
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+margin-bottom:25px;
+backdrop-filter: blur(10px);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+transform: translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+input,select{
+padding:10px;
+margin:5px;
+border:1px solid #ccc;
+border-radius:6px;
+transition: all 0.3s ease;
+}
+
+input:focus,select:focus{
+border-color:#3498db;
+outline:none;
+box-shadow:0 0 6px rgba(52,152,219,0.5);
+}
+
+/* Buttons */
+
+button{
+padding:9px 16px;
+margin:5px;
+border:none;
+border-radius:8px;
+background:linear-gradient(135deg,#3498db,#2980b9);
+color:white;
+cursor:pointer;
+font-weight:500;
+transition: all 0.25s ease;
+position:relative;
+overflow:hidden;
+}
+
+button:hover{
+transform: translateY(-2px) scale(1.03);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Delete button */
+
+.delete-btn{
+background:linear-gradient(135deg,#e74c3c,#c0392b);
+}
+
+.delete-btn:hover{
+transform: scale(1.05);
+}
+
+/* Update button */
+
+.update-btn{
+background:linear-gradient(135deg,#27ae60,#1e8449);
+}
+
+.update-btn:hover{
+transform: scale(1.05);
+}
+
+/* Product Grid */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:20px;
+animation: fadeIn 1.2s ease;
+}
+
+/* Product Card */
+
+.product-card{
+background:#fff;
+border-radius:12px;
+padding:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition: all 0.35s ease;
+position:relative;
+overflow:hidden;
+}
+
+.product-card:hover{
+transform: translateY(-8px) scale(1.02);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Glow animation */
+
+.product-card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(52,152,219,0.2),
+transparent
+);
+transform:rotate(25deg);
+opacity:0;
+transition: opacity 0.5s;
+}
+
+.product-card:hover::before{
+opacity:1;
+animation: shine 1.2s linear;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform: translateY(40px);
+}
+to{
+opacity:1;
+transform: translateY(0);
+}
+}
+
+@keyframes fadeInDown{
+from{
+opacity:0;
+transform: translateY(-40px);
+}
+to{
+opacity:1;
+transform: translateY(0);
+}
+}
+
+@keyframes shine{
+0%{
+transform: translateX(-100%) rotate(25deg);
+}
+100%{
+transform: translateX(100%) rotate(25deg);
+}
 }
